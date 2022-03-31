@@ -1,7 +1,7 @@
-package library.preview;
+package proLibrary.preview;
 
-import library.utility.LibraryLogin;
-import library.utility.LibraryUtil;
+import proLibrary.utility.LibraryLogin;
+import proLibrary.utility.LibraryUtil;
 import java.util.Scanner;
 
 public class LibraryView {

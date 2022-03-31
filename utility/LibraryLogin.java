@@ -1,6 +1,6 @@
-package library.utility;
+package proLibrary.utility;
 
-import library.preview.LibraryView;
+import proLibrary.preview.LibraryView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,5 +24,4 @@ public class LibraryLogin {
         map.put(uName, uPW);
         LibraryView.start();
     }
-
 }
