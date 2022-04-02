@@ -2,34 +2,26 @@ package proLibrary.manage;
 
 public class UserDTO {
 
-    private String uNM;
-    private String uPW;
-    private String bookNM;
-    private int bookSerialNum;
+    private static String uID;
+    private static String uPW;
 
-    public UserDTO(String uNM, String uPW){
-        this.uNM = uNM;
+    public UserDTO(String uID, String uPW){
+        this.uID = uID;
         this.uPW = uPW;
     }
 
     public void printResult(){
-        System.out.println("사용자명 : " + uNM + "\t사용자 비번 : " + uPW);
+        System.out.println("사용자 ID : " + uID + "\t사용자 PW : " + uPW);
     }
 
-//-------------getters-------------
-    public String getuNM() {
-        return uNM;
+
+//-------------------< getters >-----------------------
+
+    public static String getUID() {
+        return uID;
     }
 
-    public String getuPW() {
+    public static String getUPW() {
         return uPW;
-    }
-
-    public String getBookNM() {
-        return bookNM;
-    }
-
-    public int getBookSerialNum() {
-        return bookSerialNum;
     }
 }
