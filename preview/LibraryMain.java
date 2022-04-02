@@ -2,8 +2,7 @@ package proLibrary.preview;
 
 public class LibraryMain {
     public static void main(String[] args) {
-
-        LibraryView libView = new LibraryView();
-        libView.login();
+        LibraryView view = new LibraryView();
+        view.login();
     }
 }

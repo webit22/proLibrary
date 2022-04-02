@@ -10,8 +10,10 @@ public class LibraryUtil {
             Rent();
         else if(choice == 2)
             TurnIn();
-        else
+        else if(choice == 3)
             System.out.println("프로그램을 종료합니다.");
+        else
+            System.out.println("1 ~ 3번 중 다시 입력해주십시오.");
     }
 
 //  대여 서비스
