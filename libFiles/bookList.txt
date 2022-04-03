@@ -1,6 +1,6 @@
 도서번호  Author   Title
 -----------------------
-  1    author1  title1
-  2    author1  title2
-  3    author2  title1
-  4    author2  title2
+  0    Author0  Title0
+  1    Author1  Title1
+  2    Author2  Title2
+  3    Author3  Title3

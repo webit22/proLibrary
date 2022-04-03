@@ -38,7 +38,8 @@ public class FileManager{
             byte[ ] readBuffer = new byte[fis.available()];
 
             while (fis.read(readBuffer) != -1){ // 더이상 읽어올게 없으면 -1 반환
-                System.out.println(new String(readBuffer)); //출력
+//                if(path.equals("libFiles/bookList.txt"))
+                    System.out.println(new String(readBuffer)); //출력
             }
 
         } catch (Exception e) {
@@ -59,6 +60,12 @@ public class FileManager{
     }
 
 //    @Override
+//    save as "seq;author;title\n"
+    public void writeUserInfo(String str){
+        filePath = "libFiles/info_" + this.uID + ".txt";
+        write(filePath, str);
+    }
+
     public void writeUserInfo(String bSerialNum, String bAuthor, String bTitle) {
         filePath = "libFiles/info_" + this.uID + ".txt";
 
