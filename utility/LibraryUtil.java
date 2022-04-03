@@ -4,6 +4,7 @@ import proLibrary.manage.BookDTO;
 import proLibrary.manage.FileManager;
 import proLibrary.preview.LibraryView;
 
+import javax.swing.*;
 import java.util.*;
 import java.lang.System;
 
@@ -30,13 +31,17 @@ public class LibraryUtil {
             case 1 :
                 rent(); break;
             case 2 :
-                turnIn(); break;
+                if(rentList.isEmpty()) {
+                    System.out.println("대여하신 책이 없습니다.");
+                    restart();
+                }
+                turnIn();
+                break;
             case 3 :
                 System.out.println(exit);
                 break;
             default:
-                System.out.println("\n1 ~ 3번 중 다시 입력해주십시오.");
-                LibraryView.start();
+                restart();
                 break;
         }
     }
@@ -44,8 +49,7 @@ public class LibraryUtil {
 //  대여 서비스
 
     public void rent(){
-        String bAuthor;
-        String bTitle;
+        String temp;
 
         System.out.println("\n------< 도서 목록 >------");
         fm.readBookInfo();
@@ -55,10 +59,14 @@ public class LibraryUtil {
         totalCnt += cnt;
 
         for(int i = 0; i < cnt; i++) {
-            System.out.print((i+1) + "번째로 대여할 책 도서번호 : ");
+            if(cnt == 1)
+                System.out.print("대여할 책 도서번호 : ");
+            else
+                System.out.print((i+1) + "번째로 대여할 책 도서번호 : ");
+
             bSeq = Integer.parseInt(sc.nextLine());
 
-//          중복체크 : 만약 키가 있다면 다시 도서번호 입력 받기, 만약 키가 없다면 add to rent list
+//          중복체크 : 만약 키가 있다면 다시 도서번호 입력 받기
             if(rentList.containsKey(bSeq)){
                 totalCnt--;
                 continue;
@@ -66,10 +74,9 @@ public class LibraryUtil {
 
 //          만약 키가 없다면 add to rent list
             BookDTO bDTO = bookDTOList.get(bSeq);
-            bAuthor = bDTO.getBAuthor();
-            bTitle  = bDTO.getBTitle();
+            temp = bDTO.getBAuthor() + "\t" + bDTO.getBTitle();
 
-            rentList.put(bSeq, bSeq + "\t\t" + bAuthor + "\t" + bTitle);
+            rentList.put(bSeq, temp);
             strList += rentList.get(bSeq) + "\n";
 
 //            책이 있는지 확인 - 책 추가/제거 시 필요
@@ -80,23 +87,62 @@ public class LibraryUtil {
 //            }
         }
 
-        fm.writeUserInfo(strList);
-        printResult();
+        fm.writeUserInfo(printResult());
         moreRent();
     }
 
     //  반납 서비스
     public void turnIn(){
-        System.out.println("\n반납");
+        printResult();
+
+        System.out.print("반납할 책 개수 : ");
+        cnt = Integer.parseInt(sc.nextLine());
+        totalCnt += cnt;
+
+        for(int i = 0; i < cnt; i++){
+
+            if(cnt == 1)
+                System.out.print("반납할 책 도서번호 : ");
+            else
+                System.out.print((i+1) + "번째로 반납할 책 도서번호 : ");
+
+            bSeq = Integer.parseInt(sc.nextLine());
+
+//          중복체크 : 만약 키가 있다면 다시 도서번호 입력 받기
+//            if(!rentList.containsKey(bSeq)){
+//                totalCnt--;
+//                continue;
+//            }
+
+//          만약 키가 있다면 list에서 제거
+            System.out.print("\n" + rentList.get(bSeq) + "을(를) 삭제하시겠습니까?(y/n) ");
+            String str = sc.nextLine();
+
+            if(str.equals("y") || str.equals("Y")){
+                rentList.remove(bSeq);
+
+            } else {
+                System.out.println("삭제를 취소하고 되돌아갑니다.");
+                LibraryView.start();
+            }
+        }
+
+        fm.writeUserInfo(printResult());
+//        moreRent();
     }
 
-    private void printResult() {
-        System.out.println("\n총 대여한 도서는 " + totalCnt + "권 입니다.");
+    private String printResult() {
+        System.out.println("총 대여한 도서는 " + totalCnt + "권 입니다.\n");
+        String str = "\n";
+        str += "-----< 대여 list >-----\n";
+        str += "도서번호\tAuthor\tTitle\n";
+        str += "----------------------\n";
 
-        System.out.println("\n-----< 대여 list >-----");
-        System.out.println("도서번호\tAuthor\tTitle");
-        System.out.println("----------------------");
-        fm.readUserInfo();
+        for (Map.Entry<Integer, String> entry : rentList.entrySet()) {
+            str += entry.getKey() + "\t\t" + entry.getValue() + "\n";
+        }
+        System.out.println(str);
+        return str;
     }
 
     private void moreRent(){
@@ -106,8 +152,10 @@ public class LibraryUtil {
         if(str.equals("y") || str.equals("Y")) {
             rent();
         } else if(str.equals("n") || str.equals("N")) {
-            System.out.println(exit);
-            System.exit(0);
+            strList = "";
+            totalCnt = 0;
+            System.out.println("이전 화면으로 되돌아갑니다.\n");
+            LibraryView.start();
         } else {
             System.out.println("\n다시 입력해주세요.");
             this.moreRent();
@@ -116,5 +164,9 @@ public class LibraryUtil {
 
 //    public void moreTurnIn(){}
 
+    private void restart(){
+        System.out.println("\n1 ~ 3번 중 다시 입력해주세요.");
+        LibraryView.start();
+    }
 
 }

@@ -1,2 +1,0 @@
-Author1;Title1
-Author2;Title2
