@@ -1,7 +1,6 @@
 package proLibrary.manage;
 
 public class BookDTO {
-//    private String[][] arrBookInfo;
     private Integer bSeq;
     private String bAuthor;
     private String bTitle;

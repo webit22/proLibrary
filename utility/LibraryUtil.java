@@ -4,7 +4,6 @@ import proLibrary.manage.BookDTO;
 import proLibrary.manage.FileManager;
 import proLibrary.preview.LibraryView;
 
-import javax.swing.*;
 import java.util.*;
 import java.lang.System;
 
@@ -17,15 +16,15 @@ public class LibraryUtil {
 //    BookDTO class에 접근할 수 있는 객체 생성
     private Integer bSeq = 0; // 도서번호
     private String exit = "\n도서 관리 프로그램을 종료합니다.";
-    private String strList = "";
     private int cnt = 0, totalCnt = 0;
 
-    public LibraryUtil(){};
-
-    public void start(int choice){
+    public LibraryUtil(){
         for(int i = 0; i < 4; i++){
             bookDTOList.add(new BookDTO(i,"Author"+i,"Title"+i));
         }
+    };
+
+    public void start(int choice){
 
         switch (choice) {
             case 1 :
@@ -75,9 +74,7 @@ public class LibraryUtil {
 //          만약 키가 없다면 add to rent list
             BookDTO bDTO = bookDTOList.get(bSeq);
             temp = bDTO.getBAuthor() + "\t" + bDTO.getBTitle();
-
             rentList.put(bSeq, temp);
-            strList += rentList.get(bSeq) + "\n";
 
 //            책이 있는지 확인 - 책 추가/제거 시 필요
 //            if (bDTO.getMapList().containsKey(bDTO.getBSerialNum())) {
@@ -128,7 +125,7 @@ public class LibraryUtil {
         }
 
         fm.writeUserInfo(printResult());
-//        moreRent();
+        moreTurnIn();
     }
 
     private String printResult() {
@@ -152,7 +149,6 @@ public class LibraryUtil {
         if(str.equals("y") || str.equals("Y")) {
             rent();
         } else if(str.equals("n") || str.equals("N")) {
-            strList = "";
             totalCnt = 0;
             System.out.println("이전 화면으로 되돌아갑니다.\n");
             LibraryView.start();
@@ -162,7 +158,21 @@ public class LibraryUtil {
         }
     }
 
-//    public void moreTurnIn(){}
+    public void moreTurnIn(){
+        System.out.print("더 반납하시겠습니까? (y/n) : ");
+        String str = sc.nextLine();
+
+        if(str.equals("y") || str.equals("Y")) {
+            turnIn();
+        } else if(str.equals("n") || str.equals("N")) {
+            totalCnt = 0;
+            System.out.println("이전 화면으로 되돌아갑니다.\n");
+            LibraryView.start();
+        } else {
+            System.out.println("\n다시 입력해주세요.");
+            this.moreTurnIn();
+        }
+    }
 
     private void restart(){
         System.out.println("\n1 ~ 3번 중 다시 입력해주세요.");

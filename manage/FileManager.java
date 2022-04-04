@@ -14,7 +14,6 @@ public class FileManager{
         filePath = null;
     }
 
-
 // ------------------------------------------------------------
 //    Read()
 // ------------------------------------------------------------
@@ -38,8 +37,7 @@ public class FileManager{
             byte[ ] readBuffer = new byte[fis.available()];
 
             while (fis.read(readBuffer) != -1){ // 더이상 읽어올게 없으면 -1 반환
-//                if(path.equals("libFiles/bookList.txt"))
-                    System.out.println(new String(readBuffer)); //출력
+                System.out.println(new String(readBuffer)); //출력
             }
 
         } catch (Exception e) {
