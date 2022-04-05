@@ -2,7 +2,7 @@ package proLibrary.manage;
 
 import java.io.*;
 
-// file read, write (crud)
+// file read, write
 public class FileManager{
     private String uID;
     private String uPW;
@@ -57,20 +57,8 @@ public class FileManager{
         write(filePath, str);
     }
 
-//    @Override
-//    save as "seq;author;title\n"
     public void writeUserInfo(String str){
         filePath = "libFiles/info_" + this.uID + ".txt";
-        write(filePath, str);
-    }
-
-    public void writeUserInfo(String bSerialNum, String bAuthor, String bTitle) {
-        filePath = "libFiles/info_" + this.uID + ".txt";
-
-        String str = "도서 번호 : " + bSerialNum + "\t";
-        str += "도서 저자 : " + bAuthor + "\t";
-        str += "도서 제목 : " + bTitle + "\n";
-
         write(filePath, str);
     }
 

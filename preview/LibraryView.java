@@ -1,7 +1,7 @@
 package proLibrary.preview;
 
-import proLibrary.utility.LibraryLogin;
-import proLibrary.utility.LibraryUtil;
+import proLibrary.util.LibraryLogin;
+import proLibrary.util.LibraryUtil;
 import java.util.Scanner;
 
 public class LibraryView {
@@ -10,7 +10,7 @@ public class LibraryView {
         Scanner sc = new Scanner(System.in);
         LibraryUtil libUtil = new LibraryUtil();
 
-        System.out.print("선택하세요 (1. 대여, 2.반납, 3. 종료) : ");
+        System.out.print("선택하세요 (1. 대여, 2. 반납, 3. 종료) : ");
 
         int choice = Integer.parseInt(sc.nextLine());
         libUtil.start(choice);

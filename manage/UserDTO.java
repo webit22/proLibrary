@@ -10,10 +10,6 @@ public class UserDTO {
         this.uPW = uPW;
     }
 
-    public void printResult(){
-        System.out.println("사용자 ID : " + uID + "\t사용자 PW : " + uPW);
-    }
-
 
 //-------------------< getters >-----------------------
 

@@ -1,12 +1,13 @@
 package proLibrary.manage;
 
-import proLibrary.utility.LibraryUtil;
+import proLibrary.util.LibraryUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Book {
+
 
     public static Map<Integer, String> rentList = new HashMap<>(); // 사용자가 대여한 도서 정보
 
@@ -32,6 +33,10 @@ public class Book {
 
         temp = bDTO.getBAuthor() + "\t" + bDTO.getBTitle();
         rentList.put(bSeq, temp);
+    }
+
+    public static void delete(){
+        rentList.clear();
     }
 
     public static void delete(Integer bSeq){

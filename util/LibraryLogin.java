@@ -1,4 +1,4 @@
-package proLibrary.utility;
+package proLibrary.util;
 
 import proLibrary.manage.FileManager;
 import proLibrary.manage.UserDTO;
