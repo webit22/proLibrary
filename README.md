@@ -85,8 +85,8 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
 
 ## 4. Source Code
 1. Login 시 UserDTO class 생성자를 통해 uID(user ID), uPW (user Password) 값을 저장한다. <br><br>
-<img width="500" height="500" src="externalFiles/img/LibraryLogin.png"/>
-<img width="500" height="500" src="externalFiles/img/UserDTO.png"/> <br>
+<img width="200" height="300" src="externalFiles/img/LibraryLogin.png"/>
+<img width="200" height="300" src="externalFiles/img/UserDTO.png"/> <br>
 
 2. 대여 및 반납 서비스 진행 시 사용자의 대여 list에 도서를 추가/삭제한다. <br><br>
 <img width="500" height="400" src="externalFiles/img/Book.png"/> <br>
