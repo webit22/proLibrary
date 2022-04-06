@@ -11,7 +11,7 @@ Below are the packages used in this mini project. <br>
 Furthermore, "inMemory" refers to data objects that are loaded in the memory section. <br>
 This means that the data - loaded in RAM during the process - vanish as soon as the program shuts down. <br>
 
-### [ Point Of View - Wide ]
+### [ 전체 POV ]
 *Total : 4 Packages + 9 Classes + 2 .txt files<br>
 
 - proLibrary.preview : user에게 보여지는 화면을 띄워주는 패키지 <br>
@@ -37,7 +37,7 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
 <img width="500" height="800" src="externalFiles/img/class_diagram.png"/><br><br>
 
 
-### [ Point Of View - Narrow ]
+### [ 세부 기능 POV ]
 **1. 사용자 모드**<br>
   - 로그인(login) <br>
     : ID/PW 인증하여 로그인을 시도한다.
