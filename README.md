@@ -34,7 +34,7 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
 - 구성 : 생성자, 메소드 <br>
 - Orientation : Bottom Up <br>
 
-<img width="500" height="300" src="externalFiles/img/class_diagram.png"/><br><br>
+<img width="500" height="800" src="externalFiles/img/class_diagram.png"/><br><br>
 
 
 ### [ Point Of View - Narrow ]
@@ -63,7 +63,7 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
 **2. 관리자 모드**<br>
   - 파일 출력 (Read) <br>
     - bookList.txt <br>
-      도서관에 구비된 전체 도서 목록을 .txt 파일 형태로 저장한다.
+      : 도서관에 구비된 전체 도서 목록을 .txt 파일 형태로 저장한다.
       
     - info_userID.txt <br>
       - 사용자가 책을 대여하기 전에 도서관에 구비된 도서 목록을 출력하여 화면에 띄워준다.
@@ -71,29 +71,29 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
       - 사용자가 책을 반납하기 전에 사용자의 대여 목록(list)에 어떤 도서들이 담겨있는지 출력한다.
 
   - 파일 입력 (Write) <br>
-    사용자가 책을 대여할 때마다 사용자의 .txt 파일에 도서번호 순서(정렬)대로 도서번호, 저자, 제목을 추가하여 기록한다.
-    사용자가 책을 반납할 때마다 사용자의 .txt 파일을 갱신한다 (삭제된 도서를 제외한 나머지 도서 목록을 기록). <br><br><br>
+    - 사용자가 책을 대여할 때마다 사용자의 .txt 파일에 도서번호 순서(정렬)대로 도서번호, 저자, 제목을 추가하여 기록한다. <br>
+    - 사용자가 책을 반납할 때마다 사용자의 .txt 파일을 갱신한다 (삭제된 도서를 제외한 나머지 도서 목록을 기록). <br><br><br>
 
 
 ## 3. External Files
 1. bookList.txt : 도서관에 구비된 모든 도서 목록 <br><br>
-<img width="500" height="300" src="externalFiles/img/img_bookLibrary.jpg"/> <br>
+<img width="200" height="100" src="externalFiles/img/img_bookLibrary.jpg"/> <br>
 
 2. info_userID.txt : user 계정(jbyun)으로 대여한 도서 목록 <br><br>
-<img width="500" height="300" src="externalFiles/img/img_info_jbyun.jpg"/> <br><br><br>
+<img width="200" height="100" src="externalFiles/img/img_info_jbyun.jpg"/> <br><br><br>
 
 
 ## 4. Source Code
 1. Login 시 UserDTO class 생성자를 통해 uID(user ID), uPW (user Password) 값을 저장한다. <br><br>
-<img width="500" height="300" src="externalFiles/img/LibraryLogin.png"/> <br>
-<img width="500" height="300" src="externalFiles/img/UserDTO.png"/> <br>
+<img width="500" height="500" src="externalFiles/img/LibraryLogin.png"/>
+<img width="500" height="500" src="externalFiles/img/UserDTO.png"/> <br>
 
 2. 대여 및 반납 서비스 진행 시 사용자의 대여 list에 도서를 추가/삭제한다. <br><br>
-<img width="500" height="300" src="externalFiles/img/Book.png"/> <br>
+<img width="500" height="400" src="externalFiles/img/Book.png"/> <br>
 
 3. FileManager class의 read(), write() 메소드를 활용하여 사용자의 도서 대여 목록, 도서관 전체 도서 목록을 화면에 뿌려주거나 변경사항을 기록/저장한다. <br><br>
-<img width="500" height="300" src="externalFiles/img/read.png"/> <br>
-<img width="500" height="300" src="externalFiles/img/write.png"/> <br><br><br>
+<img width="500" height="500" src="externalFiles/img/read.png"/> <br>
+<img width="500" height="500" src="externalFiles/img/write.png"/> <br><br><br>
 
 
 ## 5. Youtube
