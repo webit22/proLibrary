@@ -34,7 +34,7 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
 - 구성 : 생성자, 메소드 <br>
 - Orientation : Bottom Up <br>
 
-<img width="500" height="300" src="class_diagram.png"/><br><br>
+<img width="500" height="300" src="externalFiles/img/class_diagram.png"/><br><br>
 
 
 ### [ Point Of View - Narrow ]
@@ -77,23 +77,23 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
 
 ## 3. External Files
 1. bookList.txt : 도서관에 구비된 모든 도서 목록 <br><br>
-<img width="500" height="300" src="img_bookLibrary.jpg"/> <br>
+<img width="500" height="300" src="externalFiles/img/img_bookLibrary.jpg"/> <br>
 
 2. info_userID.txt : user 계정(jbyun)으로 대여한 도서 목록 <br><br>
-<img width="500" height="300" src="img_info_jbyun.jpg"/> <br><br><br>
+<img width="500" height="300" src="externalFiles/img/img_info_jbyun.jpg"/> <br><br><br>
 
 
 ## 4. Source Code
 1. Login 시 UserDTO class 생성자를 통해 uID(user ID), uPW (user Password) 값을 저장한다. <br><br>
-<img width="500" height="300" src="LibraryLogin.png"/> <br>
-<img width="500" height="300" src="UserDTO.png"/> <br>
+<img width="500" height="300" src="externalFiles/img/LibraryLogin.png"/> <br>
+<img width="500" height="300" src="externalFiles/img/UserDTO.png"/> <br>
 
 2. 대여 및 반납 서비스 진행 시 사용자의 대여 list에 도서를 추가/삭제한다. <br><br>
-<img width="500" height="300" src="Book.png"/> <br>
+<img width="500" height="300" src="externalFiles/img/Book.png"/> <br>
 
 3. FileManager class의 read(), write() 메소드를 활용하여 사용자의 도서 대여 목록, 도서관 전체 도서 목록을 화면에 뿌려주거나 변경사항을 기록/저장한다. <br><br>
-<img width="500" height="300" src="read.png"/> <br>
-<img width="500" height="300" src="write.png"/> <br><br><br>
+<img width="500" height="300" src="externalFiles/img/read.png"/> <br>
+<img width="500" height="300" src="externalFiles/img/write.png"/> <br><br><br>
 
 
 ## 5. Youtube
