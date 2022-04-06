@@ -34,7 +34,7 @@ This means that the data - loaded in RAM during the process - vanish as soon as 
 - 구성 : 생성자, 메소드 <br>
 - Orientation : Bottom Up <br>
 
-<img width="500" height="300" src="/Documents/kopo_ExternalFiles/proLibrary/class_diagram.png"/><br><br>
+<img width="500" height="300" src="class_diagram.png"/><br><br>
 
 
 ### [ Point Of View - Narrow ]
